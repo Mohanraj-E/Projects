@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RAG Question Answering</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>📄 ISO RAG Assistant</h1>
+
+    <form method="post" action="/ask">
+        <textarea 
+            name="query" 
+            placeholder="Ask your question..."
+            required></textarea>
+
+        <button type="submit">Ask</button>
+    </form>
+
+    {% if answer %}
+    <div class="result">
+        <h3>❓ Question</h3>
+        <p>{{ question }}</p>
+
+        <h3>✅ Answer</h3>
+        <p>{{ answer }}</p>
+
+        <h3>📚 Sources</h3>
+        <ul>
+            {% for src in sources %}
+            <li>
+                {{ src.source }} — Page {{ src.page }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
