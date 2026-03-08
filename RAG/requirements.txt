@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+langchain
+langchain-community
+langchain-google-genai
+langchain-huggingface
+sentence-transformers
+rank-bm25
+faiss-cpu
+numpy
+pydantic
